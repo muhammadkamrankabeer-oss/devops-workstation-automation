@@ -65,6 +65,8 @@ Designed for:
 
 ---
 # 🏗️ Architecture
+
+
 Host Machine (Xubuntu - Dell E7440)
 |
 |-- Ansible Playbook (Automation Engine)
@@ -80,10 +82,6 @@ Host Machine (Xubuntu - Dell E7440)
 |-- Docker Environment
 |-- Jenkins CI/CD Server
 |-- Grafana + Prometheus Monitoring
-
-
-
-
 ---
 ⚡ Features
 ⚡ One-command full setup
