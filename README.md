@@ -64,14 +64,11 @@ Designed for:
 - OnlyOffice
 
 ---
-
-# 🏗️ Architecture
-```md id="fixfinalarch"
+```md id="fixedfull01"
 # 🏗️ Architecture
 
 ```mermaid
-
-graph TD
+graph TD;
 
 A[Host Machine - Xubuntu] --> B[Ansible Playbook]
 
@@ -85,7 +82,6 @@ C3 --> D[Virtual Machines]
 D --> E1[Docker Inside VM]
 D --> E2[Jenkins CI/CD]
 D --> E3[Grafana + Prometheus]
-
 ⚡ Features
 ⚡ One-command full setup
 🔁 Idempotent (safe re-run)
@@ -105,9 +101,7 @@ git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automat
 cd devops-workstation-automation
 ansible-playbook -i inventory setup.yml --ask-become-pass
 🔄 CI/CD (Future Ready)
-<p align="center">
-
-</p>
+<p align="center"> </p>
 
 CI/CD pipeline will be added using GitHub Actions for automation testing and validation.
 
@@ -127,7 +121,6 @@ Terraform cloud provisioning
 👨‍💻 Author
 
 Muhammad Kamran Kabeer
-
 DevOps Learner | Linux Enthusiast | Automation Explorer
 
 ⭐ Support
@@ -135,5 +128,5 @@ DevOps Learner | Linux Enthusiast | Automation Explorer
 If you like this project:
 
 ⭐ Star the repository
-🍴 Fork and improve it
+🍴 Fork it
 📢 Share on LinkedIn
