@@ -1,4 +1,3 @@
-
 <!-- ===================== HEADER ===================== -->
 
 <p align="center">
@@ -19,14 +18,15 @@ Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox
 ![AWS CLI](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-Ubuntu-yellow?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![CI](https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation/actions/workflows/ci.yml/badge.svg)
 
 </p>
 
 ---
-![CI](https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation/actions/workflows/ci.yml/badge.svg)
+
 # 📌 Overview
 
-A fully automated **DevOps workstation setup project** that provisions a complete development environment using a single Ansible playbook.
+A fully automated **DevOps workstation setup project** using Ansible that provisions a complete development environment in a single command.
 
 Designed for:
 - DevOps learning
@@ -64,9 +64,8 @@ Designed for:
 - OnlyOffice
 
 ---
+
 # 🏗️ Architecture
-
-
 Host Machine (Xubuntu - Dell E7440)
 |
 |-- Ansible Playbook (Automation Engine)
@@ -83,29 +82,45 @@ Host Machine (Xubuntu - Dell E7440)
 |-- Jenkins CI/CD Server
 |-- Grafana + Prometheus Monitoring
 ---
-⚡ Features
-⚡ One-command full setup
-🔁 Idempotent (safe re-run)
-🧩 Auto dependency handling
-🛠️ VirtualBox kernel auto-repair
-☁️ Cloud-ready CLI setup
-💻 Lightweight host optimized
-📂 Project Structure
-<details> <summary>Click to expand</summary>
+
+# ⚡ Features
+
+- ⚡ One-command full setup
+- 🔁 Idempotent (safe re-run)
+- 🧩 Auto dependency handling
+- 🛠️ VirtualBox kernel auto-repair
+- ☁️ Cloud-ready CLI setup
+- 💻 Lightweight host optimized
+
+---
+
+# 📂 Project Structure
+
+<details>
+<summary>Click to expand</summary>
+
 ansible-setup/
 ├── inventory
 ├── setup.yml
 └── README.md
 </details>
-🚀 How to Use
+
+---
+
+# 🚀 How to Use
+
+```bash
 git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git
 cd devops-workstation-automation
 ansible-playbook -i inventory setup.yml --ask-become-pass
-🔄 CI/CD (Future Ready)
-<p align="center"> </p>
 
-CI/CD pipeline will be added using GitHub Actions for automation testing and validation.
+🔄 CI/CD (GitHub Actions)
 
+This project includes a CI pipeline that:
+
+Validates Ansible syntax
+Ensures YAML correctness
+Runs automatically on push
 📌 Learning Outcomes
 Infrastructure as Code (IaC)
 Linux system automation
@@ -122,6 +137,7 @@ Terraform cloud provisioning
 👨‍💻 Author
 
 Muhammad Kamran Kabeer
+
 DevOps Learner | Linux Enthusiast | Automation Explorer
 
 ⭐ Support
