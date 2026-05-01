@@ -64,24 +64,24 @@ Designed for:
 - OnlyOffice
 
 ---
-```md id="fixedfull01"
 # 🏗️ Architecture
+Host Machine (Xubuntu - Dell E7440)
+│
+├── Ansible Playbook (Automation Engine)
+│
+├── DevOps Tools Installed on Host
+│ ├── Terraform (IaC)
+│ ├── Vagrant (VM Automation)
+│ ├── VirtualBox (Virtualization)
+│ ├── AWS CLI (Cloud Access)
+│ ├── Git / VS Code
+│
+└── VirtualBox Virtual Machines
+│
+├── Docker Environment
+├── Jenkins CI/CD Server
+└── Grafana + Prometheus Monitoring
 
-```mermaid
-graph TD;
-
-A[Host Machine - Xubuntu] --> B[Ansible Playbook]
-
-B --> C1[Terraform]
-B --> C2[Vagrant]
-B --> C3[VirtualBox]
-B --> C4[AWS CLI]
-
-C3 --> D[Virtual Machines]
-
-D --> E1[Docker Inside VM]
-D --> E2[Jenkins CI/CD]
-D --> E3[Grafana + Prometheus]
 ⚡ Features
 ⚡ One-command full setup
 🔁 Idempotent (safe re-run)
