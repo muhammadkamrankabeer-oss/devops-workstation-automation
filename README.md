@@ -1,21 +1,36 @@
-# 🚀 DevOps Automated Workstation (Ansible-Based Setup)
+<!-- ===================== HEADER ===================== -->
 
-A fully automated DevOps environment setup using **Ansible** to configure a lightweight Linux workstation with essential DevOps tools in a single command.
+<p align="center">
+  <img src="assets/banner.png" alt="DevOps Workstation Banner" />
+</p>
 
-This project is designed for **DevOps Automated workstation**.
+<h1 align="center">🚀 DevOps Workstation Automation</h1>
+
+<p align="center">
+Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox • AWS CLI)
+</p>
+
+<p align="center">
+
+![Ansible](https://img.shields.io/badge/Ansible-Automation-red?style=for-the-badge)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple?style=for-the-badge)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-VM-blue?style=for-the-badge)
+![AWS CLI](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge)
+![Linux](https://img.shields.io/badge/Linux-Ubuntu-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+
+</p>
 
 ---
 
-# 🧠 Overview
+# 📌 Overview
 
-This project automates the setup of a complete DevOps development environment including:
+A fully automated **DevOps workstation setup project** that provisions a complete development environment using a single Ansible playbook.
 
-- Infrastructure as Code tools (Terraform, Vagrant)
-- Virtualization (VirtualBox)
-- Cloud CLI (AWS CLI)
-- Development tools (VS Code, Git)
-- Networking utilities
-- Productivity tools (Brave Browser, OnlyOffice)
+Designed for:
+- DevOps learning
+- Infrastructure automation practice
+- Portfolio showcase
 
 ---
 
@@ -32,29 +47,29 @@ This project automates the setup of a complete DevOps development environment in
 
 # 📦 Installed Tools
 
-✔ Git  
-✔ Curl / Wget  
-✔ Vim / Htop  
-✔ Net-tools  
-✔ DNS utilities  
-✔ Traceroute  
-✔ Nmap  
-✔ Terraform  
-✔ Vagrant  
-✔ VirtualBox  
-✔ AWS CLI v2  
-✔ Visual Studio Code  
-✔ Brave Browser  
-✔ OnlyOffice  
+- Git
+- Curl / Wget
+- Vim / Htop
+- Net-tools
+- DNS utilities
+- Traceroute
+- Nmap
+- Terraform
+- Vagrant
+- VirtualBox
+- AWS CLI v2
+- VS Code
+- Brave Browser
+- OnlyOffice
 
 ---
 
 # 🏗️ Architecture
 
-```mermaid id="arch02"
+```mermaid
 graph TD;
 
-A[Host Machine - Xubuntu Dell E7440] --> B[Ansible Playbook Automation]
+A[Host Machine - Xubuntu] --> B[Ansible Playbook]
 
 B --> C1[Terraform]
 B --> C2[Vagrant]
@@ -63,35 +78,47 @@ B --> C4[AWS CLI]
 
 C3 --> D[Virtual Machines]
 
-D --> E1[Docker Runtime Inside VM]
-D --> E2[Jenkins CI/CD Server]
-D --> E3[Grafana + Prometheus Monitoring]
-🔄 Features
+D --> E1[Docker Inside VM]
+D --> E2[Jenkins CI/CD]
+D --> E3[Grafana + Prometheus]
+⚡ Features
 ⚡ One-command full setup
-🔁 Idempotent (safe to re-run anytime)
+🔁 Idempotent (safe re-run)
 🧩 Auto dependency handling
-🛠️ VirtualBox kernel module auto-fix
-☁️ Cloud-ready CLI environment
-💻 Lightweight host optimization
+🛠️ VirtualBox kernel auto-repair
+☁️ Cloud-ready CLI setup
+💻 Lightweight host optimized
+📂 Project Structure
+<details> <summary>Click to expand</summary>
+ansible-setup/
+├── inventory
+├── setup.yml
+└── README.md
+</details>
 🚀 How to Use
-1. Clone repository
 git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git
 cd devops-workstation-automation
-2. Run playbook
 ansible-playbook -i inventory setup.yml --ask-become-pass
+🔄 CI/CD (Future Ready)
+<p align="center">
+
+</p>
+
+CI/CD pipeline will be added using GitHub Actions for automation testing and validation.
+
 📌 Learning Outcomes
-Infrastructure automation using Ansible
-Linux system provisioning
+Infrastructure as Code (IaC)
+Linux system automation
 DevOps toolchain setup
 Virtualization management
 Cloud CLI integration
-Real-world system automation
+Real-world automation practices
 🧠 Future Improvements
-Add Docker VM environment
-Add Jenkins CI/CD pipeline
-Add Prometheus + Grafana monitoring stack
-Convert into full Ansible roles structure
-Integrate Terraform cloud provisioning
+Docker VM environment
+Jenkins CI/CD pipeline
+Prometheus + Grafana monitoring stack
+Full Ansible roles structure
+Terraform cloud provisioning
 👨‍💻 Author
 
 Muhammad Kamran Kabeer
@@ -102,6 +129,6 @@ DevOps Learner | Linux Enthusiast | Automation Explorer
 
 If you like this project:
 
-Give it a ⭐ on GitHub
-Fork it and improve it
-Share it on LinkedIn
+⭐ Star the repository
+🍴 Fork and improve it
+📢 Share on LinkedIn
