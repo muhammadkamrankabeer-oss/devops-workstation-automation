@@ -96,15 +96,15 @@ Host Machine (Xubuntu - Dell E7440)
 
 # 📂 Project Structure
 
-<details>
-<summary>Click to expand</summary>
+
 
 ansible-setup/
 ├── inventory
 ├── setup.yml
 └── README.md
 </details>
-
+<details>
+<summary>Click to expand</summary>
 ---
 
 # 🚀 How to Use
