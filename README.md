@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="DevOps Workstation Banner" />
+</p>
+
 <!-- ===================== HEADER ===================== -->
 
 <p align="center">
@@ -81,6 +85,7 @@ C3 --> D[Virtual Machines]
 D --> E1[Docker Inside VM]
 D --> E2[Jenkins CI/CD]
 D --> E3[Grafana + Prometheus]
+
 ⚡ Features
 ⚡ One-command full setup
 🔁 Idempotent (safe re-run)
