@@ -70,6 +70,7 @@ Designed for:
 # 🏗️ Architecture
 
 ```mermaid
+
 graph TD
 
 A[Host Machine - Xubuntu] --> B[Ansible Playbook]
