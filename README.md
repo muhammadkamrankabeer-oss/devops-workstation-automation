@@ -66,7 +66,7 @@ A fully automated **DevOps workstation setup project** using Ansible that provis
 ---
 
 # 🏗️ Architecture
-
+```
 Host Machine (Xubuntu - Dell E7440)
 │
 ├── Ansible Playbook (Automation Engine)
@@ -81,11 +81,10 @@ Host Machine (Xubuntu - Dell E7440)
 ├── Docker Environment
 ├── Jenkins CI/CD Server
 └── Grafana + Prometheus Monitoring
-
-Code
+```
 
 ---
-
+```
 # ⚡ Features
 
 - ⚡ One-command full setup
@@ -94,9 +93,9 @@ Code
 - 🛠️ VirtualBox kernel auto-repair
 - ☁️ Cloud-ready CLI setup
 - 💻 Lightweight host optimized
-
+```
 ---
-
+```
 # 📂 Project Structure
 
 ansible-setup/
@@ -105,7 +104,7 @@ ansible-setup/
 └── README.md
 
 Code
-
+```
 ---
 
 # 🚀 How to Use
@@ -114,6 +113,9 @@ Code
 git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git
 cd devops-workstation-automation
 ansible-playbook -i inventory setup.yml --ask-become-pass
+```
+---
+
 🔄 CI/CD (GitHub Actions)
 This project includes a CI pipeline that:
 
@@ -122,7 +124,7 @@ Validates Ansible syntax
 Ensures YAML correctness
 
 Runs automatically on push
-
+---
 📌 Learning Outcomes
 Infrastructure as Code (IaC)
 
@@ -135,7 +137,7 @@ Virtualization management
 Cloud CLI integration
 
 Real-world automation practices
-
+---
 🧠 Future Improvements
 Docker VM environment
 
@@ -146,11 +148,11 @@ Prometheus + Grafana monitoring stack
 Full Ansible roles structure
 
 Terraform cloud provisioning
-
+---
 👨‍💻 Author
 Muhammad Kamran Kabeer  
 DevOps Learner | Linux Enthusiast | Automation Explorer
-
+---
 🌐 GitHub https://github.com/muhammadkamrankabeer-oss
 
 💼 LinkedIn https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/ 
