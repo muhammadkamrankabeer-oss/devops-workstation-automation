@@ -23,7 +23,7 @@ Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox
 </p>
 
 ---
-
+![CI](https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation/actions/workflows/ci.yml/badge.svg)
 # 📌 Overview
 
 A fully automated **DevOps workstation setup project** that provisions a complete development environment using a single Ansible playbook.
