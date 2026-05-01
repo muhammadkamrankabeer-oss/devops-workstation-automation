@@ -66,6 +66,7 @@ Designed for:
 ---
 # 🏗️ Architecture
 Host Machine (Xubuntu - Dell E7440)
+<<<<<<< HEAD
 │
 ├── Ansible Playbook (Automation Engine)
 │
@@ -81,6 +82,22 @@ Host Machine (Xubuntu - Dell E7440)
 ├── Docker Environment
 ├── Jenkins CI/CD Server
 └── Grafana + Prometheus Monitoring
+=======
+|
+|-- Ansible Playbook (Automation Engine)
+|
+|-- DevOps Tools Installed on Host
+| |-- Terraform (IaC)
+| |-- Vagrant (VM Automation)
+| |-- VirtualBox (Virtualization)
+| |-- AWS CLI (Cloud Access)
+| |-- Git / VS Code
+|
+|-- VirtualBox Virtual Machines
+|-- Docker Environment
+|-- Jenkins CI/CD Server
+|-- Grafana + Prometheus Monitoring
+>>>>>>> cc5e037 (Fix README Mermaid diagram and add banner image)
 
 ⚡ Features
 ⚡ One-command full setup
