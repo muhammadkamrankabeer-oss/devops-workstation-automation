@@ -26,7 +26,7 @@ Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox
 
 # 📌 Overview
 
-A fully automated **DevOps workstation setup project** using Ansible that provisions a complete development environment in a single command.
+A fully automated DevOps workstation setup using Ansible that provisions a complete development environment in a single command.
 
 Designed for:
 - DevOps learning
@@ -81,30 +81,19 @@ Host Machine (Xubuntu - Dell E7440)
 |-- Docker Environment
 |-- Jenkins CI/CD Server
 |-- Grafana + Prometheus Monitoring
----
 
-# ⚡ Features
-
-- ⚡ One-command full setup
-- 🔁 Idempotent (safe re-run)
-- 🧩 Auto dependency handling
-- 🛠️ VirtualBox kernel auto-repair
-- ☁️ Cloud-ready CLI setup
-- 💻 Lightweight host optimized
 
 ---
 
 # 📂 Project Structure
 
 
-
 ansible-setup/
 ├── inventory
 ├── setup.yml
 └── README.md
-</details>
-<details>
-<summary>Click to expand</summary>
+
+
 ---
 
 # 🚀 How to Use
@@ -114,13 +103,14 @@ git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automat
 cd devops-workstation-automation
 ansible-playbook -i inventory setup.yml --ask-become-pass
 
+---
 🔄 CI/CD (GitHub Actions)
 
 This project includes a CI pipeline that:
 
 Validates Ansible syntax
 Ensures YAML correctness
-Runs automatically on push
+Runs automatically on every push
 📌 Learning Outcomes
 Infrastructure as Code (IaC)
 Linux system automation
