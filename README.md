@@ -28,7 +28,7 @@ Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox
 
 A fully automated **DevOps workstation setup project** using Ansible that provisions a complete development environment in a single command.
 
-Designed for:
+**Designed for:**
 - DevOps learning
 - Infrastructure automation practice
 - Portfolio showcase
@@ -66,21 +66,23 @@ Designed for:
 ---
 
 # 🏗️ Architecture
+
 Host Machine (Xubuntu - Dell E7440)
-|
-|-- Ansible Playbook (Automation Engine)
-|
-|-- DevOps Tools Installed on Host
-| |-- Terraform (IaC)
-| |-- Vagrant (VM Automation)
-| |-- VirtualBox (Virtualization)
-| |-- AWS CLI (Cloud Access)
-| |-- Git / VS Code
-|
-|-- VirtualBox Virtual Machines
-|-- Docker Environment
-|-- Jenkins CI/CD Server
-|-- Grafana + Prometheus Monitoring
+│
+├── Ansible Playbook (Automation Engine)
+│   ├── DevOps Tools Installed on Host
+│   ├── Terraform (IaC)
+│   ├── Vagrant (VM Automation)
+│   ├── VirtualBox (Virtualization)
+│   ├── AWS CLI (Cloud Access)
+│   ├── Git / VS Code
+│
+└── VirtualBox Virtual Machines
+├── Docker Environment
+├── Jenkins CI/CD Server
+└── Grafana + Prometheus Monitoring
+
+Code
 
 ---
 
@@ -101,11 +103,8 @@ ansible-setup/
 ├── inventory
 ├── setup.yml
 └── README.md
-<details>
-<summary>Click to expand</summary>
 
-
-</details>
+Code
 
 ---
 
@@ -115,42 +114,52 @@ ansible-setup/
 git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git
 cd devops-workstation-automation
 ansible-playbook -i inventory setup.yml --ask-become-pass
-
----
-
 🔄 CI/CD (GitHub Actions)
-
 This project includes a CI pipeline that:
 
 Validates Ansible syntax
+
 Ensures YAML correctness
+
 Runs automatically on push
----
+
 📌 Learning Outcomes
 Infrastructure as Code (IaC)
+
 Linux system automation
+
 DevOps toolchain setup
+
 Virtualization management
+
 Cloud CLI integration
+
 Real-world automation practices
+
 🧠 Future Improvements
 Docker VM environment
+
 Jenkins CI/CD pipeline
+
 Prometheus + Grafana monitoring stack
+
 Full Ansible roles structure
+
 Terraform cloud provisioning
+
 👨‍💻 Author
-
-Muhammad Kamran Kabeer
-
+Muhammad Kamran Kabeer  
 DevOps Learner | Linux Enthusiast | Automation Explorer
 
-⭐ Support
+🌐 GitHub https://github.com/muhammadkamrankabeer-oss
 
+💼 LinkedIn https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/ 
+
+⭐ Support
 If you like this project:
 
 ⭐ Star the repository
+
 🍴 Fork it
+
 📢 Share on LinkedIn
-https://github.com/muhammadkamrankabeer-oss
-https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/
