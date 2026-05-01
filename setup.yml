@@ -1,0 +1,186 @@
+- name: Complete DevOps Base Setup (Single Playbook)
+  hosts: local
+  become: yes
+
+  vars:
+    vbox_version: "7.0"
+
+  tasks:
+
+    # -------------------------
+    # SYSTEM UPDATE
+    # -------------------------
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    # -------------------------
+    # BASIC TOOLS
+    # -------------------------
+    - name: Install base tools
+      apt:
+        name:
+          - git
+          - curl
+          - wget
+          - vim
+          - htop
+          - unzip
+        state: present
+
+    # -------------------------
+    # NETWORKING TOOLS
+    # -------------------------
+    - name: Install networking tools
+      apt:
+        name:
+          - net-tools
+          - dnsutils
+          - traceroute
+          - nmap
+        state: present
+
+    # -------------------------
+    # KERNEL + BUILD DEPENDENCIES (IMPORTANT FOR VIRTUALBOX FIX)
+    # -------------------------
+    - name: Install kernel build dependencies
+      apt:
+        name:
+          - dkms
+          - build-essential
+          - linux-headers-{{ ansible_kernel }}
+        state: present
+
+    # -------------------------
+    # HASHICORP (Terraform + Vagrant)
+    # -------------------------
+    - name: Add HashiCorp GPG key
+      apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+
+    - name: Add HashiCorp repo
+      apt_repository:
+        repo: "deb https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+
+    - name: Install Terraform and Vagrant
+      apt:
+        name:
+          - terraform
+          - vagrant
+        state: present
+        update_cache: yes
+
+    # -------------------------
+    # VIRTUALBOX INSTALL
+    # -------------------------
+    - name: Add Oracle GPG key
+      apt_key:
+        url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+        state: present
+
+    - name: Add VirtualBox repo
+      apt_repository:
+        repo: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+
+    - name: Install VirtualBox
+      apt:
+        name: "virtualbox-{{ vbox_version }}"
+        state: present
+        update_cache: yes
+
+    # -------------------------
+    # FIX VIRTUALBOX KERNEL MODULES (AUTO REPAIR)
+    # -------------------------
+    - name: Run VirtualBox kernel configuration
+      command: /sbin/vboxconfig
+      register: vboxconfig_result
+      failed_when: false
+
+    - name: Fallback DKMS fix if needed
+      command: dkms install virtualbox/7.0
+      register: dkms_result
+      failed_when: false
+
+    - name: Load vboxdrv module
+      modprobe:
+        name: vboxdrv
+      ignore_errors: yes
+
+    # -------------------------
+    # AWS CLI v2
+    # -------------------------
+    - name: Download AWS CLI
+      get_url:
+        url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        dest: /tmp/awscliv2.zip
+
+    - name: Unzip AWS CLI
+      unarchive:
+        src: /tmp/awscliv2.zip
+        dest: /tmp/
+        remote_src: yes
+
+    - name: Install AWS CLI
+      command: /tmp/aws/install
+      args:
+        creates: /usr/local/bin/aws
+
+    - name: Cleanup AWS CLI installer
+      file:
+        path: /tmp/awscliv2.zip
+        state: absent
+
+    # -------------------------
+    # VS CODE
+    # -------------------------
+    - name: Add Microsoft GPG key
+      apt_key:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+
+    - name: Add VS Code repo
+      apt_repository:
+        repo: "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main"
+
+    - name: Install VS Code
+      apt:
+        name: code
+        state: present
+        update_cache: yes
+
+    # -------------------------
+    # ONLYOFFICE
+    # -------------------------
+    - name: Add OnlyOffice GPG key
+      apt_key:
+        url: https://download.onlyoffice.com/GPG-KEY-ONLYOFFICE
+        state: present
+
+    - name: Add OnlyOffice repo
+      apt_repository:
+        repo: "deb https://download.onlyoffice.com/repo/debian squeeze main"
+
+    - name: Install OnlyOffice
+      apt:
+        name: onlyoffice-desktopeditors
+        state: present
+        update_cache: yes
+
+    # -------------------------
+    # BRAVE BROWSER
+    # -------------------------
+    - name: Add Brave GPG key
+      apt_key:
+        url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+        state: present
+
+    - name: Add Brave repo
+      apt_repository:
+        repo: "deb https://brave-browser-apt-release.s3.brave.com/ stable main"
+
+    - name: Install Brave Browser
+      apt:
+        name: brave-browser
+        state: present
+        update_cache: yes
