@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="assets/banner.png" alt="DevOps Workstation Banner" />
-</p>
 
 <!-- ===================== HEADER ===================== -->
 
@@ -69,9 +66,11 @@ Designed for:
 ---
 
 # 🏗️ Architecture
+```md id="fixfinalarch"
+# 🏗️ Architecture
 
 ```mermaid
-graph TD;
+graph TD
 
 A[Host Machine - Xubuntu] --> B[Ansible Playbook]
 
