@@ -1,3 +1,9 @@
+<!-- ===================== HEADER ===================== -->
+
+<p align="center">
+  <img src="assets/banner.png" alt="DevOps Workstation Banner" />
+</p>
+
 <h1 align="center">🚀 DevOps Workstation Automation</h1>
 
 <p align="center">
@@ -5,58 +11,146 @@ Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Ansible-Automation-red?style=for-the-badge" alt="Ansible">
-<img src="https://img.shields.io/badge/Terraform-IaC-purple?style=for-the-badge" alt="Terraform">
-<img src="https://img.shields.io/badge/VirtualBox-VM-blue?style=for-the-badge" alt="VirtualBox">
-<img src="https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge" alt="AWS CLI">
-<img src="https://img.shields.io/badge/Linux-Ubuntu-yellow?style=for-the-badge" alt="Linux">
-<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
-<img src="https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation/actions/workflows/ci.yml/badge.svg" alt="CI">
+
+![Ansible](https://img.shields.io/badge/Ansible-Automation-red?style=for-the-badge)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple?style=for-the-badge)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-VM-blue?style=for-the-badge)
+![AWS CLI](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge)
+![Linux](https://img.shields.io/badge/Linux-Ubuntu-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![CI](https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation/actions/workflows/ci.yml/badge.svg)
+
 </p>
 
 ---
 
-## 📌 Overview
-This project uses **Ansible** to provision a complete development environment on a local host. It is designed to demonstrate Infrastructure as Code (IaC) principles for local machine management.
+# 📌 Overview
 
-**Designed for:**
-*   DevOps Portfolio Showcase
-*   Consistent Environment Reproducibility
-*   Learning Infrastructure Automation
+A fully automated **DevOps workstation setup project** using Ansible that provisions a complete development environment in a single command.
+
+Designed for:
+- DevOps learning
+- Infrastructure automation practice
+- Portfolio showcase
 
 ---
 
-## 🏗️ Architecture
-The following diagram illustrates how the automation layers are structured on the host machine:
+# ⚙️ Tech Stack
 
-```mermaid
-graph TD
-    A[Dell E7440 Host - Xubuntu] --> B[Ansible Playbook]
-    B --> C[System Utilities]
-    B --> D[DevOps Toolchain]
-    B --> E[Virtualization Layer]
-    
-    subgraph "Installed Tools"
-    C --> C1[Git / Vim / Htop]
-    C --> C2[Net-tools / Nmap]
-    D --> D1[Terraform]
-    D --> D2[AWS CLI v2]
-    D --> D3[VS Code]
-    E --> E1[VirtualBox]
-    E --> E2[Vagrant]
-    end
-    
-    subgraph "Planned Labs"
-    E1 --> F[Docker VM]
-    E1 --> G[Jenkins CI/CD]
-    E1 --> H[Monitoring Stack]
-    end
-⚙️ Tech StackAutomation Engine: AnsibleHost System: Xubuntu (Linux)Virtualization: VirtualBox & VagrantCloud Tools: Terraform & AWS CLI📦 Installed ToolsCategoryToolsCore SystemsGit, Curl, Wget, Vim, HtopNetworkingNet-tools, DNS utils, Traceroute, NmapDevOps & IaCTerraform, Vagrant, AWS CLI v2VirtualizationVirtualBoxProductivityVS Code, Brave Browser, OnlyOffice📂 Project StructureBashansible-setup/
-├── assets/         # Images and banners
-├── inventory       # Localhost connection details
-├── setup.yml       # Main Ansible Playbook
-└── README.md       # Project documentation
-🚀 How to Use1. Clone the repositoryBashgit clone [https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git](https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git)
+- Ansible (Automation Engine)
+- Linux (Xubuntu Host)
+- VirtualBox (Virtualization)
+- Terraform (Infrastructure as Code)
+- Vagrant (VM Automation)
+- AWS CLI (Cloud Access)
+
+---
+
+# 📦 Installed Tools
+
+- Git
+- Curl / Wget
+- Vim / Htop
+- Net-tools
+- DNS utilities
+- Traceroute
+- Nmap
+- Terraform
+- Vagrant
+- VirtualBox
+- AWS CLI v2
+- VS Code
+- Brave Browser
+- OnlyOffice
+
+---
+
+# 🏗️ Architecture
+Host Machine (Xubuntu - Dell E7440)
+|
+|-- Ansible Playbook (Automation Engine)
+|
+|-- DevOps Tools Installed on Host
+| |-- Terraform (IaC)
+| |-- Vagrant (VM Automation)
+| |-- VirtualBox (Virtualization)
+| |-- AWS CLI (Cloud Access)
+| |-- Git / VS Code
+|
+|-- VirtualBox Virtual Machines
+|-- Docker Environment
+|-- Jenkins CI/CD Server
+|-- Grafana + Prometheus Monitoring
+
+---
+
+# ⚡ Features
+
+- ⚡ One-command full setup
+- 🔁 Idempotent (safe re-run)
+- 🧩 Auto dependency handling
+- 🛠️ VirtualBox kernel auto-repair
+- ☁️ Cloud-ready CLI setup
+- 💻 Lightweight host optimized
+
+---
+
+# 📂 Project Structure
+
+ansible-setup/
+├── inventory
+├── setup.yml
+└── README.md
+<details>
+<summary>Click to expand</summary>
+
+
+</details>
+
+---
+
+# 🚀 How to Use
+
+```bash
+git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git
 cd devops-workstation-automation
-2. Run the PlaybookNote: You will be prompted for your sudo password to install packages.Bashansible-playbook -i inventory setup.yml --ask-become-pass
-🔄 CI/CD (GitHub Actions)This project uses a GitHub Actions pipeline to:Lint: Check YAML formatting.Validate: Ensure Ansible syntax is correct before deployment.👨‍💻 AuthorMuhammad Kamran KabeerDevOps Learner | Linux Enthusiast | Automation ExplorerLinkedIn | GitHub
+ansible-playbook -i inventory setup.yml --ask-become-pass
+
+---
+
+🔄 CI/CD (GitHub Actions)
+
+This project includes a CI pipeline that:
+
+Validates Ansible syntax
+Ensures YAML correctness
+Runs automatically on push
+---
+📌 Learning Outcomes
+Infrastructure as Code (IaC)
+Linux system automation
+DevOps toolchain setup
+Virtualization management
+Cloud CLI integration
+Real-world automation practices
+🧠 Future Improvements
+Docker VM environment
+Jenkins CI/CD pipeline
+Prometheus + Grafana monitoring stack
+Full Ansible roles structure
+Terraform cloud provisioning
+👨‍💻 Author
+
+Muhammad Kamran Kabeer
+
+DevOps Learner | Linux Enthusiast | Automation Explorer
+
+⭐ Support
+
+If you like this project:
+
+⭐ Star the repository
+🍴 Fork it
+📢 Share on LinkedIn
+https://github.com/muhammadkamrankabeer-oss
+https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/
