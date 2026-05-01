@@ -66,23 +66,25 @@ Designed for:
 ---
 # 🏗️ Architecture
 Host Machine (Xubuntu - Dell E7440)
+|
+|-- Ansible Playbook (Automation Engine)
+|
+|-- DevOps Tools Installed on Host
+| |-- Terraform (IaC)
+| |-- Vagrant (VM Automation)
+| |-- VirtualBox (Virtualization)
+| |-- AWS CLI (Cloud Access)
+| |-- Git / VS Code
+|
+|-- VirtualBox Virtual Machines
+|-- Docker Environment
+|-- Jenkins CI/CD Server
+|-- Grafana + Prometheus Monitoring
 
-│
-├── Ansible Playbook (Automation Engine)
-│
-├── DevOps Tools Installed on Host
-│ ├── Terraform (IaC)
-│ ├── Vagrant (VM Automation)
-│ ├── VirtualBox (Virtualization)
-│ ├── AWS CLI (Cloud Access)
-│ ├── Git / VS Code
-│
-└── VirtualBox Virtual Machines
-│
-├── Docker Environment
-├── Jenkins CI/CD Server
-└── Grafana + Prometheus Monitoring
 
+
+
+---
 ⚡ Features
 ⚡ One-command full setup
 🔁 Idempotent (safe re-run)
