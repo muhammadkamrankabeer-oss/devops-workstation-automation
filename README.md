@@ -7,7 +7,7 @@
 <h1 align="center">🚀 DevOps Workstation Automation</h1>
 
 <p align="center">
-Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox • AWS CLI)
+Automated DevOps environment setup using Ansible (Terraform • VirtualBox • AWS CLI)
 </p>
 
 <p align="center">
@@ -18,7 +18,6 @@ Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox
 ![AWS CLI](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-Ubuntu-yellow?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![CI](https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation/actions/workflows/ci.yml/badge.svg)
 
 </p>
 
@@ -26,12 +25,9 @@ Automated Linux DevOps environment setup using Ansible (Terraform • VirtualBox
 
 # 📌 Overview
 
-A fully automated **DevOps workstation setup project** using Ansible that provisions a complete development environment in a single command.
+A **production-style DevOps workstation setup** automated using Ansible.
 
-**Designed for:**
-- DevOps learning
-- Infrastructure automation practice
-- Portfolio showcase
+This project provisions a complete DevOps environment with a single command, reducing manual setup time and ensuring consistency.
 
 ---
 
@@ -46,65 +42,39 @@ A fully automated **DevOps workstation setup project** using Ansible that provis
 
 ---
 
-# 📦 Installed Tools
-
-- Git
-- Curl / Wget
-- Vim / Htop
-- Net-tools
-- DNS utilities
-- Traceroute
-- Nmap
-- Terraform
-- Vagrant
-- VirtualBox
-- AWS CLI v2
-- VS Code
-- Brave Browser
-- OnlyOffice
-
----
-
 # 🏗️ Architecture
+
 ```
-Host Machine (Xubuntu - Dell E7440)
+Host Machine (Xubuntu)
 │
 ├── Ansible Playbook (Automation Engine)
-│   ├── DevOps Tools Installed on Host
-│   ├── Terraform (IaC)
-│   ├── Vagrant (VM Automation)
-│   ├── VirtualBox (Virtualization)
-│   ├── AWS CLI (Cloud Access)
-│   ├── Git / VS Code
 │
-└── VirtualBox Virtual Machines
+├── DevOps Tools Installed
+│ ├── Terraform
+│ ├── Vagrant
+│ ├── VirtualBox
+│ ├── AWS CLI
+│ └── Git / VS Code
+│
+└── Virtual Machines (VirtualBox)
 ├── Docker Environment
 ├── Jenkins CI/CD Server
 └── Grafana + Prometheus Monitoring
 ```
 
 ---
-```
-# ⚡ Features
 
-- ⚡ One-command full setup
-- 🔁 Idempotent (safe re-run)
-- 🧩 Auto dependency handling
-- 🛠️ VirtualBox kernel auto-repair
-- ☁️ Cloud-ready CLI setup
-- 💻 Lightweight host optimized
-```
----
-```
-# 📂 Project Structure
+# 🔄 How It Works
 
-ansible-setup/
-├── inventory
-├── setup.yml
-└── README.md
+1. User runs Ansible playbook  
+2. System installs required DevOps tools  
+3. VirtualBox is configured automatically  
+4. Virtual machines are provisioned  
+5. Inside VMs:
+   - Docker environment is prepared  
+   - Jenkins CI/CD server can be deployed  
+   - Monitoring stack (Grafana + Prometheus) can be added  
 
-Code
-```
 ---
 
 # 🚀 How to Use
@@ -115,53 +85,95 @@ cd devops-workstation-automation
 ansible-playbook -i inventory setup.yml --ask-become-pass
 ```
 ---
+📸 Demo (Add Screenshots)
 
-🔄 CI/CD (GitHub Actions)
-This project includes a CI pipeline that:
+Add screenshots inside assets/ folder
+
+Example:
+
+![Ansible Setup](assets/ansible.png)
+![VirtualBox](assets/vm.png)
+![Grafana](assets/grafana.png)
+---
+💼 Real-World Use Case
+
+This setup can be used to:
+```
+Quickly prepare DevOps lab environments
+Train students with real infrastructure
+Standardize team development environments
+Reduce onboarding time for new engineers
+```
+---
+```
+⚡ Features
+⚡ One-command full setup
+🔁 Idempotent (safe re-run)
+🧩 Auto dependency handling
+🛠️ VirtualBox kernel auto-repair
+☁️ Cloud-ready CLI setup
+💻 Lightweight host optimized
+📂 Project Structure
+```
+---
+```
+ansible-setup/
+├── inventory
+├── setup.yml
+└── README.md
+```
+---
+```
+🔄 CI/CD
+
+This project includes a GitHub Actions pipeline that:
 
 Validates Ansible syntax
-
-Ensures YAML correctness
-
+Checks YAML formatting
 Runs automatically on push
+```
 ---
+```
 📌 Learning Outcomes
 Infrastructure as Code (IaC)
-
-Linux system automation
-
+Linux automation
 DevOps toolchain setup
-
 Virtualization management
-
 Cloud CLI integration
-
 Real-world automation practices
+```
 ---
+```
 🧠 Future Improvements
-Docker VM environment
-
-Jenkins CI/CD pipeline
-
-Prometheus + Grafana monitoring stack
-
-Full Ansible roles structure
-
+Full Docker environment automation inside VMs
+Jenkins pipeline automation
+Prometheus + Grafana auto-deployment
 Terraform cloud provisioning
+```
 ---
+```
 👨‍💻 Author
-Muhammad Kamran Kabeer  
-DevOps Learner | Linux Enthusiast | Automation Explorer
----
+
+Muhammad Kamran Kabeer
+DevOps Engineer | Linux | Automation
+
 🌐 GitHub https://github.com/muhammadkamrankabeer-oss
 
 💼 LinkedIn https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/ 
 
+
+```
+---
 ⭐ Support
+```
 If you like this project:
 
 ⭐ Star the repository
-
 🍴 Fork it
-
 📢 Share on LinkedIn
+```
+---
+🏷️ Tags
+
+#devops #ansible #linux #automation #terraform #virtualbox #cloud
+---
