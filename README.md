@@ -98,12 +98,10 @@ Example:
 💼 Real-World Use Case
 
 This setup can be used to:
-```
 Quickly prepare DevOps lab environments
 Train students with real infrastructure
 Standardize team development environments
 Reduce onboarding time for new engineers
-```
 ---
 ```
 ⚡ Features
