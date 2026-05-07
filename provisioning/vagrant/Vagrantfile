@@ -1,0 +1,23 @@
+Vagrant.configure("2") do |config|
+
+  # ✅ Correct box for libvirt
+  config.vm.box = "generic/ubuntu2204"
+
+  config.vm.hostname = "devops-vm"
+
+  # Network
+  config.vm.network "private_network", type: "dhcp"
+
+  # Provider: libvirt (KVM)
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.memory = 4096
+    libvirt.cpus = 2
+  end
+
+  # ✅ Clean Ansible provisioning
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "../../setup.yml"
+    ansible.inventory_path = "../../inventory"
+  end
+
+end

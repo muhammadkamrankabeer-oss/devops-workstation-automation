@@ -7,15 +7,15 @@
 <h1 align="center">🚀 DevOps Workstation Automation</h1>
 
 <p align="center">
-Automated DevOps environment setup using Ansible (Terraform • VirtualBox • AWS CLI)
+Automated DevOps workstation provisioning using Ansible, KVM/libvirt, Docker, and Infrastructure as Code tools.
 </p>
 
 <p align="center">
 
 ![Ansible](https://img.shields.io/badge/Ansible-Automation-red?style=for-the-badge)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-purple?style=for-the-badge)
-![VirtualBox](https://img.shields.io/badge/VirtualBox-VM-blue?style=for-the-badge)
-![AWS CLI](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge)
+![KVM](https://img.shields.io/badge/KVM-Virtualization-blue?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-Containers-2496ED?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-Ubuntu-yellow?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
@@ -23,159 +23,240 @@ Automated DevOps environment setup using Ansible (Terraform • VirtualBox • A
 
 ---
 
-# 📌 Overview
+## 📌 Overview
 
-A **production-style DevOps workstation setup** automated using Ansible.
+This project automates the provisioning of a complete DevOps workstation using Ansible and KVM virtualization.
 
-This project provisions a complete DevOps environment with a single command, reducing manual setup time and ensuring consistency.
+The host operating system remains minimal and clean while all DevOps tooling and monitoring services are deployed inside isolated virtual machines.
+
+The project follows a modular Infrastructure-as-Code (IaC) approach using:
+
+* Ansible roles
+* Vagrant provisioning
+* KVM/libvirt virtualization
+* Docker-based services
+
+This setup improves reproducibility, isolation, and automation consistency for DevOps labs and learning environments.
 
 ---
 
 # ⚙️ Tech Stack
 
-- Ansible (Automation Engine)
-- Linux (Xubuntu Host)
-- VirtualBox (Virtualization)
-- Terraform (Infrastructure as Code)
-- Vagrant (VM Automation)
-- AWS CLI (Cloud Access)
+* Ansible (Automation Engine)
+* Linux (Xubuntu Host)
+* KVM/libvirt (Virtualization)
+* Terraform (Infrastructure as Code)
+* Vagrant (VM Automation)
+* Docker (Container Platform)
+* Prometheus (Monitoring)
+* Grafana (Visualization)
 
 ---
 
-# 🏗️ Architecture
+## 🏗️ Architecture
 
+### Host Machine (Xubuntu)
+
+* Git
+* Ansible
+* Terraform
+* Vagrant
+* KVM/libvirt
+
+### Provisioned DevOps VM
+
+* Docker
+* kubectl
+* Prometheus
+* Grafana
+* Development tools
+
+### Automation Flow
+
+```text
+Host OS
+   │
+   ├── Ansible Control Node
+   │
+   ├── Vagrant / Terraform
+   │
+   └── KVM Virtual Machine
+           │
+           ├── Docker
+           ├── Monitoring Stack
+           ├── kubectl
+           └── DevOps Tooling
 ```
-Host Machine (Xubuntu)
-│
-├── Ansible Playbook (Automation Engine)
-│
-├── DevOps Tools Installed
-│ ├── Terraform
-│ ├── Vagrant
-│ ├── VirtualBox
-│ ├── AWS CLI
-│ └── Git / VS Code
-│
-└── Virtual Machines (VirtualBox)
-├── Docker Environment
-├── Jenkins CI/CD Server
-└── Grafana + Prometheus Monitoring
-```
+
+---
+
+## 🧩 Ansible Roles
+
+| Role       | Purpose                               |
+| ---------- | ------------------------------------- |
+| common     | Base Linux tools and utilities        |
+| docker     | Docker installation and configuration |
+| devops     | DevOps tooling setup                  |
+| monitoring | Prometheus and Grafana deployment     |
 
 ---
 
 # 🔄 How It Works
 
-1. User runs Ansible playbook  
-2. System installs required DevOps tools  
-3. VirtualBox is configured automatically  
-4. Virtual machines are provisioned  
+1. User runs the Ansible playbook
+2. System installs required DevOps tools
+3. KVM/libvirt is configured automatically
+4. Virtual machines are provisioned
 5. Inside VMs:
-   - Docker environment is prepared  
-   - Jenkins CI/CD server can be deployed  
-   - Monitoring stack (Grafana + Prometheus) can be added  
+
+   * Docker environment is prepared
+   * Monitoring stack (Grafana + Prometheus) is deployed
+   * Additional DevOps tooling can be added
 
 ---
 
-# 🚀 How to Use
+## 🚀 How to Use
+
+### Clone Repository
 
 ```bash
 git clone https://github.com/muhammadkamrankabeer-oss/devops-workstation-automation.git
 cd devops-workstation-automation
-ansible-playbook -i inventory setup.yml --ask-become-pass
 ```
+
+### Run Automation
+
+```bash
+ansible-playbook setup.yml
+```
+
 ---
-📸 Demo (Add Screenshots)
 
-Add screenshots inside assets/ folder
+## 📸 Screenshots
 
-Example:
+### Ansible Automation Run
 
-![Ansible Setup](assets/ansible.png)
-![VirtualBox](assets/vm.png)
+![Ansible Playbook](assets/ansibleplaybook1.png)
+
+### DevOps Workstation Provisioning
+
+![Provisioning](assets/ansibleplaybook2.png)
+
+### Grafana Monitoring Dashboard
+
 ![Grafana](assets/grafana.png)
+
 ---
-💼 Real-World Use Case
+
+## 🎯 Why This Project Matters
+
+Setting up DevOps environments manually is time-consuming and error-prone.
+
+This project demonstrates how automation can standardize infrastructure, reduce setup time, and improve reliability.
+
+---
+
+## 💼 Real-World Use Case
 
 This setup can be used to:
-```
-Quickly prepare DevOps lab environments
-Train students with real infrastructure
-Standardize team development environments
-Reduce onboarding time for new engineers
-```
+
+* Quickly prepare DevOps lab environments
+* Train students with real infrastructure
+* Standardize team development environments
+* Reduce onboarding time for new engineers
+
 ---
-```
-⚡ Features
-⚡ One-command full setup
-🔁 Idempotent (safe re-run)
-🧩 Auto dependency handling
-🛠️ VirtualBox kernel auto-repair
-☁️ Cloud-ready CLI setup
-💻 Lightweight host optimized
-📂 Project Structure
-```
+
+## ⚡ Features
+
+* ⚡ One-command DevOps workstation provisioning
+* 🧩 Modular Ansible role architecture
+* 🔁 Idempotent automation (safe re-run)
+* 🐳 Docker-based tooling inside isolated VM
+* 📊 Automated monitoring stack deployment
+* 🖥️ Clean host OS architecture
+* ☁️ Infrastructure reproducibility
+* 🔐 SSH-based remote automation
+* 📦 Environment separation using KVM/libvirt
+
 ---
-```
-ansible-setup/
-├── inventory
+
+## 📂 Project Structure
+
+```text
+devops-workstation-automation/
+├── ansible.cfg
+├── inventory/
+│   └── dev/
+│       └── hosts.ini
+├── provisioning/
+│   ├── terraform/
+│   └── vagrant/
+├── roles/
+│   ├── common/
+│   ├── docker/
+│   ├── devops/
+│   └── monitoring/
+├── assets/
 ├── setup.yml
 └── README.md
 ```
+
 ---
-```
-🔄 CI/CD
+
+## 🔄 CI/CD
 
 This project includes a GitHub Actions pipeline that:
 
-Validates Ansible syntax
-Checks YAML formatting
-Runs automatically on push
-```
+* Validates Ansible syntax
+* Checks YAML formatting
+* Runs automatically on push
+
 ---
-```
-📌 Learning Outcomes
-Infrastructure as Code (IaC)
-Linux automation
-DevOps toolchain setup
-Virtualization management
-Cloud CLI integration
-Real-world automation practices
-```
+
+# 📌 Learning Outcomes
+
+* Infrastructure as Code (IaC)
+* Linux automation
+* DevOps toolchain setup
+* Virtualization management
+* Monitoring stack deployment
+* Real-world automation practices
+
 ---
-```
-🧠 Future Improvements
-Full Docker environment automation inside VMs
-Jenkins pipeline automation
-Prometheus + Grafana auto-deployment
-Terraform cloud provisioning
-```
+
+## 🧠 Future Improvements
+
+* Terraform-based KVM VM provisioning
+* Jenkins CI/CD pipeline integration
+* Kubernetes local cluster automation
+* Automated monitoring alerts
+* Multi-environment inventory support
+* GitHub Actions deployment validation
+
 ---
-```
-👨‍💻 Author
+
+## 👨‍💻 Author
 
 Muhammad Kamran Kabeer
 DevOps Engineer | Linux | Automation
 
-🌐 GitHub https://github.com/muhammadkamrankabeer-oss
+🌐 GitHub: [https://github.com/muhammadkamrankabeer-oss](https://github.com/muhammadkamrankabeer-oss)
 
-💼 LinkedIn https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/ 
+💼 LinkedIn: [https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/](https://www.linkedin.com/in/muhammad-kamran-kabeer-b64740a4/)
 
-
-```
 ---
-⭐ Support
-```
+
+## ⭐ Support
+
 If you like this project:
 
-⭐ Star the repository
-🍴 Fork it
-📢 Share on LinkedIn
-```
----
-🏷️ Tags
-
-#devops #ansible #linux #automation #terraform #virtualbox #cloud
+* ⭐ Star the repository
+* 🍴 Fork it
+* 📢 Share on LinkedIn
 
 ---
 
+## 🏷️ Tags
+
+#devops #ansible #linux #automation #terraform #kvm #docker #monitoring #iac

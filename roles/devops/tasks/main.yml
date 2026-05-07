@@ -1,0 +1,10 @@
+- name: Install Git
+  apt:
+    name: git
+    state: present
+
+- name: Install kubectl
+  get_url:
+    url: https://dl.k8s.io/release/v1.28.0/bin/linux/amd64/kubectl
+    dest: /usr/local/bin/kubectl
+    mode: '0755'

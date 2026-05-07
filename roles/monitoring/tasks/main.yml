@@ -1,0 +1,30 @@
+- name: Ensure Docker is available
+  command: docker --version
+
+- name: Pull Prometheus image (retry safe)
+  command: docker pull prom/prometheus
+  register: result
+  retries: 5
+  delay: 10
+  until: result.rc == 0
+
+- name: Pull Grafana image (retry safe)
+  command: docker pull grafana/grafana
+  register: result
+  retries: 5
+  delay: 10
+  until: result.rc == 0
+
+- name: Remove existing Prometheus container if exists
+  command: docker rm -f prometheus
+  ignore_errors: yes
+
+- name: Remove existing Grafana container if exists
+  command: docker rm -f grafana
+  ignore_errors: yes
+
+- name: Run Prometheus container
+  command: docker run -d --name prometheus -p 9090:9090 prom/prometheus
+
+- name: Run Grafana container
+  command: docker run -d --name grafana -p 3000:3000 grafana/grafana

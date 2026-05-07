@@ -1,0 +1,10 @@
+- name: Install basic tools
+  apt:
+    name:
+      - git
+      - curl
+      - wget
+      - vim
+      - htop
+    state: present
+    update_cache: yes
